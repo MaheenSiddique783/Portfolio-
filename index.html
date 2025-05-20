@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+    <link rel="stylesheet" href="./assets/aos/aos.css" />
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">M.S</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <nav id="hamburger-nav">
+      <div class="logo">John Doe</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+
+    <section id="profile" data-aos="fade-up">
+      <div class="section__pic-container" data-aos="fade-right">
+        <img src="./assets/mainpic2.jpg" alt="Profile Picture" class="main-pic" />
+      </div>
+      <div class="section__text" data-aos="fade-left">
+        <p class="section__text__p1">Hello, I'm</p>
+        <h1 class="bouncing-title">
+          <span>M</span><span>a</span><span>h</span><span>e</span><span>e</span><span>n</span> 
+          <span>S</span><span>i</span><span>d</span><span>d</span><span>i</span><span>q</span><span>u</span><span>e</span>
+        </h1>
+        
+        
+        <p class="section__text__p2">Fullstack Developer</p>
+        <div class="btn-container">
+          <button class="btn btn-color-2" onclick="window.open('./assets/resume-example.pdf')">Download CV</button>
+          <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
+        </div>
+        <div id="socials-container">
+          <img src="./assets/linkedin.png" alt="LinkedIn profile" class="icon" onclick="location.href='https://linkedin.com/'" />
+          <img src="./assets/github.png" alt="Github profile" class="icon" onclick="location.href='https://github.com/MaheenSiddique783'" />
+        </div>
+      </div>
+    </section>
+
+    <section id="about" data-aos="fade-up">
+      <p class="section__text__p1">Get To Know More</p>
+      <h1 class="title">About Me</h1>
+      <div class="section-container">
+        <div class="section__pic-container" data-aos="fade-right">
+          <img src="./assets/sidepic1.jpg" alt="Profile picture" class="about-pic" />
+        </div>
+        <div class="about-details-container" data-aos="fade-left">
+          <div class="about-containers">
+            <div class="details-container" data-aos="zoom-in">
+              <img src="./assets/experience.png" alt="Experience icon" class="icon" />
+              <h3>Experience</h3>
+              <p>2+ years <br />Software Development,</p>
+            </div>
+            <div class="details-container" data-aos="zoom-in">
+              <img src="./assets/education.png" alt="Education icon" class="icon" />
+              <h3>Education</h3>
+              <p>Currently Pursuing B.Sc. Bachelors Degree</p>
+            </div>
+          </div>
+          <section id="about-me" data-aos="fade-up">
+            <p class="about-paragraph">
+              Hey there — I'm <strong>Maheen Siddique</strong>, a curious mix of engineer, designer, and serial tinkerer.<br><br>
+          
+              I love crafting experiences that live both in the real world (like automated fish feeders powered by STM32 boards) and the digital one (like clean, responsive websites built with WordPress, Figma, and just enough JavaScript to keep things interesting).<br><br>
+          
+              Currently pursuing a B.Sc. in Software Systems Engineering from University of Regina, I thrive in the space where software logic meets intuitive UI. I believe a good design should not only work — it should make people smile.<br><br>
+          
+              When I’m not wrangling microcontrollers or polishing interfaces, you’ll probably find me sketching UI mockups, reverse-engineering everyday gadgets, or quietly celebrating a perfectly aligned CSS grid.
+            </p>
+          </section>
+          
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" data-aos="fade-up" data-bg="bg-about-pic.jpg">
+      <p class="section__text__p1">My </p>
+      <h1 class="title">Fullstack Experience</h1>
+      <div class="experience-details-container">
+          <div class="details-container" data-aos="zoom-in">
+            <h2 class="experience-sub-title">Frontend Development</h2>
+            <div class="article-container">
+              <article data-aos="fade-right">
+                <img src="./assets/checkmark.png" alt="icon" class="icon" />
+                <div>
+                  <h3>HTML</h3>
+                  <p class="skill-level">Experienced</p>
+                </div>
+              </article>
+            
+              <article data-aos="fade-right">
+                <img src="./assets/checkmark.png" alt="icon" class="icon" />
+                <div>
+                  <h3>CSS</h3>
+                  <p class="skill-level">Experienced</p>
+                </div>
+              </article>
+            
+              <article data-aos="fade-right">
+                <img src="./assets/checkmark.png" alt="icon" class="icon" />
+                <div>
+                  <h3>JavaScript</h3>
+                  <p class="skill-level">Basic</p>
+                </div>
+              </article>
+            
+              <article data-aos="fade-right">
+                <img src="./assets/checkmark.png" alt="icon" class="icon" />
+                <div>
+                  <h3>Figma</h3>
+                  <p class="skill-level">Intermediate</p>
+                </div>
+              </article>
+            
+              <article data-aos="fade-right">
+                <img src="./assets/checkmark.png" alt="icon" class="icon" />
+                <div>
+                  <h3>WordPress</h3>
+                  <p class="skill-level">Intermediate</p>
+                </div>
+              </article>
+            
+              <article data-aos="fade-right">
+                <img src="./assets/checkmark.png" alt="icon" class="icon" />
+                <div>
+                  <h3>Responsive Design</h3>
+                  <p class="skill-level">Intermediate</p>
+                </div>
+              </article>
+            </div>
+            
+          </div>
+          <div class="details-container">
+            <h2 class="experience-sub-title">Backend Development</h2>
+            <div class="article-container backend-grid">
+              <article data-aos="fade-right">
+                <img src="./assets/checkmark.png" alt="icon" class="icon" />
+                <div>
+                  <h3>Node.js</h3>
+                  <p class="skill-level">Intermediate</p>
+                </div>
+              </article>
+              <article data-aos="fade-right">
+                <img src="./assets/checkmark.png" alt="icon" class="icon" />
+                <div>
+                  <h3>Express.js</h3>
+                  <p class="skill-level">Intermediate</p>
+                </div>
+              </article>
+              <article data-aos="fade-right">
+                <img src="./assets/checkmark.png" alt="icon" class="icon" />
+                <div>
+                  <h3>RESTful API Design</h3>
+                  <p class="skill-level">Intermediate</p>
+                </div>
+              </article>
+              <article data-aos="fade-right">
+                <img src="./assets/checkmark.png" alt="icon" class="icon" />
+                <div>
+                  <h3>MySQL</h3>
+                  <p class="skill-level">Intermediate</p>
+                </div>
+              </article>
+              <article data-aos="fade-right">
+                <img src="./assets/checkmark.png" alt="icon" class="icon" />
+                <div>
+                  <h3>PHP</h3>
+                  <p class="skill-level">Basic</p>
+                </div>
+              </article>
+              <article data-aos="fade-right">
+                <img src="./assets/checkmark.png" alt="icon" class="icon" />
+                <div>
+                  <h3>MongoDB</h3>
+                  <p class="skill-level">Basic</p>
+                </div>
+              </article>
+            </div>
+          </div>
+           
+    </section>
+
+    <section id="projects" data-aos="fade-up" data-bg="bg-projects.jpg">
+      <p class="section__text__p1">Browse My Recent</p>
+      <h1 class="title">Projects</h1>
+      <div class="experience-details-container">
+    
+          <!-- Project 1 -->
+          <div class="details-container color-container" data-aos="zoom-in">
+            <a href="https://github.com/Lintondsouza/ENSE-374-Project/tree/main/Project" target="_blank">
+              <img src="./assets/Screenshot 2025-05-09 014956.png" alt="Project 1" class="project-img" />
+            </a>
+            <h2 class="experience-sub-title project-title">Gearshare: A peer to peer ride rental service</h2>
+          </div>
+    
+          <!-- Project 2 -->
+          <div class="details-container color-container" data-aos="zoom-in">
+            <a href="https://github.com/yourusername/project2" target="_blank">
+              <img src="./assets/project-2.png" alt="Project 2" class="project-img" />
+            </a>
+            <h2 class="experience-sub-title project-title">Project Two</h2>
+          </div>
+    
+          <!-- Project 3 -->
+          <div class="details-container color-container" data-aos="zoom-in">
+            <a href="https://github.com/yourusername/project3" target="_blank">
+              <img src="./assets/project-3.png" alt="Project 3" class="project-img" />
+            </a>
+            <h2 class="experience-sub-title project-title">Project Three</h2>
+          </div>
+    
+          <!-- Project 4 -->
+          <div class="details-container color-container" data-aos="zoom-in">
+            <a href="https://github.com/yourusername/project4" target="_blank">
+              <img src="./assets/project-4.png" alt="Project 4" class="project-img" />
+            </a>
+            <h2 class="experience-sub-title project-title">Project Four</h2>
+          </div>
+    
+          <!-- Project 5 -->
+          <div class="details-container color-container" data-aos="zoom-in">
+            <a href="https://github.com/yourusername/project5" target="_blank">
+              <img src="./assets/project-5.png" alt="Project 5" class="project-img" />
+            </a>
+            <h2 class="experience-sub-title project-title">Project Five</h2>
+          </div>
+    
+        </div>
+      </div>
+    </section>
+
+    <section id="hobbies" data-aos="fade-up">
+      <p class="section__text__p1">What I Enjoy Outside Work:</p>
+      <h1 class="title">Hobbies and Interests</h1>
+      <div class="experience-details-container">
+        <div class="hobby-containers">
+
+      
+          <!-- Hobby 1 -->
+          <div class="details-container color-container" data-aos="zoom-in" data-aos-delay="0">
+            <img src="./assets/hobby1.jpg" alt="Hobby 1" class="project-img" />
+            <h2 class="experience-sub-title project-title">DIY Electronics</h2>
+            <p class="project-description">
+              I enjoy turning perfectly good weekends into chaotic soldering marathons. Whether it's blinking an LED or nearly frying a microcontroller, it's all part of the thrill.
+            </p>
+          </div>
+      
+          <!-- Hobby 2 -->
+          <div class="details-container color-container" data-aos="zoom-in" data-aos-delay="300">
+            <img src="./assets/hobby2.jpg" alt="Hobby 2" class="project-img" />
+            <h2 class="experience-sub-title project-title">Gaming</h2>
+            <p class="project-description">
+              A common one these days—gaming’s how I unwind, meet friends, and practice strategy... and occasionally rage-quit.
+            </p>
+          </div>
+      
+          <!-- Hobby 3 -->
+          <div class="details-container color-container" data-aos="zoom-in" data-aos-delay="500">
+            <img src="./assets/hobby3.jpg" alt="Hobby 3" class="project-img" />
+            <h2 class="experience-sub-title project-title">Fishkeeping</h2>
+            <p class="project-description">
+              Fishkeeping is equal parts patience, science, and resisting the urge to overfeed. It’s a calming ecosystem of bubbles and discipline.
+            </p>
+          </div>
+      
+        </div>
+      </div>
+      
+    </section>
+    
+    
+    
+    
+    <section id="contact" data-aos="fade-up">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img src="./assets/gmail-icon-free-png.webp" alt="Email icon" class="icon contact-icon email-icon" />
+          <p>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=maheensiddique13@gmail.com" target="_blank">
+              Compose Email
+            </a>
+          </p>
+        </div>
+        <div class="contact-info-container">
+          <img src="./assets/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.webp" alt="LinkedIn icon" class="icon contact-icon" />
+          <p><a href="https://www.linkedin.com/in/your-link">LinkedIn</a></p>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright © 2023 John Doe. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="./assets/aos/aos.js"></script>
+    
+  </body>
+</html>
