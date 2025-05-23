@@ -128,6 +128,10 @@ a:hover {
 .menu-links.open {
   max-height: 300px;
 }
+.icon.github {
+  filter: invert(1);
+}
+
 
 .hamburger-icon.open span:first-child {
   transform: rotate(45deg) translate(10px, 5px);
@@ -641,6 +645,11 @@ nav {
 }
 
 /* Project boxes */
+.project-title,
+.project-description {
+  color: white;
+}
+
 .details-container {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.2);
