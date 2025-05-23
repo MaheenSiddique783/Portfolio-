@@ -128,9 +128,6 @@ a:hover {
 .menu-links.open {
   max-height: 300px;
 }
-.icon.github {
-  filter: invert(1);
-}
 
 
 .hamburger-icon.open span:first-child {
@@ -337,8 +334,7 @@ section {
 
 #about {
   position: relative;
-  padding-bottom: 6vh;
-
+  padding-bottom: 8vh; /* Prevents overlap with #experience */
 }
 
 .about-containers { 
