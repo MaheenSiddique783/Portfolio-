@@ -333,9 +333,23 @@ section {
 /* ABOUT SECTION */
 
 #about {
-  position: relative;
-  padding-bottom: 8vh; /* Prevents overlap with #experience */
+  margin-bottom: 8rem;
 }
+
+#experience {
+  margin-top: 10rem;
+  margin-bottom: 8rem;
+}
+#experience .title {
+  margin-bottom: 3rem; /* You can increase this to 4rem or 5rem if needed */
+   margin-top: 7rem;
+}
+
+#experience .title {
+  margin-bottom: 3rem; /* or however much space you need */
+}
+
+
 
 .about-containers { 
   margin-top: 25rem;
@@ -397,12 +411,12 @@ section {
 
 
 section {
-  padding: 6vh 5vw;
-  margin: 0 auto;
   box-sizing: border-box;
   width: 100%;
   max-width: 1200px;
+  margin-inline: auto;
 }
+
 
 
 
