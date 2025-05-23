@@ -66,14 +66,14 @@ a:hover {
 }
 
 .logo-img {
-  height: 100px;        /* Adjust as needed */
-  width: auto;
-  object-fit: contain;
-  opacity: 1;
-  background-color: rgb(138, 138, 138);
-  border: 0.1rem solid black;
-  border-radius: 50%;
-} 
+  height: 100px;          /* Or any size you prefer */
+  width: auto;           /* Maintain aspect ratio */
+  margin-right: 1rem;    /* Optional spacing from nav items */
+  vertical-align: middle;
+  border: 1px solid transparent; /* Optional: to maintain space */
+  border-radius: 50%; /* Optional: to make it circular */
+}
+
 
 
 .logo:hover {
