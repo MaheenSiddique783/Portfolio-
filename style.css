@@ -65,9 +65,16 @@ a:hover {
   text-decoration-color: rgb(181, 181, 181);
 }
 
-.logo {
-  font-size: 2rem;
+.logo-img {
+  height: 100px;        /* Adjust as needed */
+  width: auto;
+  object-fit: contain;
+  opacity: 1;
+  background-color: rgb(138, 138, 138);
+  border: 0.1rem solid black;
+  border-radius: 50%;
 }
+
 
 .logo:hover {
   cursor: default;
@@ -190,7 +197,7 @@ section {
                0 7px 0 transparent, 0 8px 0 transparent, 0 9px 0 transparent,
                0 10px 10px rgba(0, 0, 0, 0.5);
   animation: bounceText 1s ease-in-out infinite alternate;
-  animation-iteration-count: 9; 
+  animation-iteration-count: 4; 
 }
 
 /* Stagger each letter */
@@ -208,6 +215,7 @@ section {
 .bouncing-title span:nth-child(12) { animation-delay: 1.2s; }
 .bouncing-title span:nth-child(13) { animation-delay: 1.3s; }
 .bouncing-title span:nth-child(14) { animation-delay: 1.4s; }
+.bouncing-title span:nth-child(15) { animation-delay: 1.5s; }
 
 
 
@@ -543,6 +551,17 @@ article .icon {
 .project-img:hover {
   transform: scale(1.05);
 }
+.project4-img {
+  width: 100%;
+  height: 320px;             /* Explicit height is needed */
+  object-fit: contain;       /* use 'contain' to show full image, or 'cover' to crop */
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+  background-color: #202020; /* fill background gap on dark theme */
+}
+
+
 
 .details-container {
   max-width: 600px;     /* or whatever fits best on your layout */
@@ -739,4 +758,77 @@ footer p {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
 }
+/* SECTION SPACING FIXES */
+
+#about {
+  margin-top: 8rem;
+  margin-bottom: 12rem; /* ⬅️ Increased space below About section */
+}
+
+#experience {
+  margin-top: 6rem;      /* ⬅️ Reduced top margin to balance */
+  margin-bottom: 10rem;  /* ⬅️ Extra spacing below experience */
+}
+
+#experience .title {
+  margin-top: 4rem;      /* ⬅️ Ensures "My Fullstack Experience" is pushed down */
+  margin-bottom: 3rem;   /* ⬅️ Keeps space above cards */
+}
+
+/* Responsive fix for about section layout */
+@media screen and (max-width: 992px) {
+  .section-container,
+  .about-details-container,
+  .about-containers {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-containers {
+    margin-top: 4rem;
+  }
+
+  .section__pic-container {
+    margin-bottom: 2rem;
+  }
+
+  .details-container {
+    max-width: 90%;
+    width: 100%;
+  }
+}
+
+/* Responsive fix for experience section layout */
+@media screen and (max-width: 992px) {
+  .experience-details-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .article-container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+
+/* Optional: Additional mobile scaling */
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .section__text__p2 {
+    font-size: 1.4rem;
+  }
+
+  .section-container {
+    padding: 0 1.5rem;
+  }
+
+  #experience,
+  #about {
+    margin-inline: 1rem;
+  }
+}
+
 
