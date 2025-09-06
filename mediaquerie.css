@@ -18,7 +18,8 @@ body {
   .about-containers,
   .experience-details-container,
   .hobby-containers {
-    flex-direction: column;
+    flex-direction: rows;
+    flex-wrap: wrap;
     align-items: center;
     gap: 2rem;
   }
@@ -113,7 +114,7 @@ body {
   }
 
   .article-container {
-    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     gap: 1rem;
   }
 
