@@ -5,6 +5,12 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 body {
@@ -41,9 +47,10 @@ nav,
 }
 
 nav {
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  height: 17vh;
+  padding: 0.75rem 1rem;
+  height: auto;
 }
 
 .nav-links {
@@ -66,12 +73,12 @@ a:hover {
 }
 
 .logo-img {
-  height: 100px;          /* Or any size you prefer */
-  width: auto;           /* Maintain aspect ratio */
-  margin-right: 1rem;    /* Optional spacing from nav items */
+  height: clamp(48px, 8vw, 72px);
+  width: auto;
+  margin-right: 1rem;
   vertical-align: middle;
-  border: 1px solid transparent; /* Optional: to maintain space */
-  border-radius: 50%; /* Optional: to make it circular */
+  border: 1px solid transparent;
+  border-radius: 50%;
 }
 
 
@@ -164,11 +171,15 @@ a:hover {
 /* SECTIONS */
 
 section {
-  padding-top: 4vh;
-  height: 96vh;
-  margin: 0 10rem;
+  padding: clamp(2rem, 4vh, 4rem) 1rem;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
   box-sizing: border-box;
-  min-height: fit-content;
+  min-height: auto;
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
 }
 
 .section-container {
@@ -180,8 +191,9 @@ section {
 #profile {
   display: flex;
   justify-content: center;
-  gap: 5rem;
-  height: 80vh;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+  flex-wrap: wrap;
 }
 .bouncing-title span {
   font-family: "Poppins", sans-serif;
@@ -235,9 +247,9 @@ section {
 
 .section__pic-container {
   display: flex;
-  height: 400px;
-  width: 400px;
   margin: auto 0;
+  max-width: 360px;
+  width: min(100%, 360px);
 }
 
 .section__text {
@@ -344,24 +356,17 @@ section {
   margin-bottom: 8rem;
 }
 
-#experience {
-  margin-top: 10rem;
-  margin-bottom: 8rem;
-}
-#experience .title {
-  margin-bottom: 3rem; /* You can increase this to 4rem or 5rem if needed */
-   margin-top: 10rem
-}
 
 
 
 
 .about-containers { 
-  margin-top: 25rem;
+  margin-top: 2rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 .experience-details-container {
   display: flex;
@@ -386,8 +391,8 @@ section {
   display: flex;
 }
 .main-pic { 
-  height: 350px;         /* or match the container size */
-  width: 350px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -415,12 +420,6 @@ section {
 }
 
 
-section {
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 1200px;
-  margin-inline: auto;
-}
 
 
 
@@ -431,23 +430,13 @@ section {
   height: 80%;
 }
 
-.section__pic-container {
-  height: 400px;
-  width: 400px;
-  margin: auto 0;
-  border-radius: 2rem;
-
-}
 
 /* EXPERIENCE SECTION */
 
 #experience {
   position: relative;
-  margin-bottom: 2rem;
- margin-top: 25vh;
-
-  
-  }
+  margin-block: 6rem;
+}
   
 
 
@@ -518,11 +507,6 @@ article .icon {
   background: rgb(250, 250, 250);
 }
 
-.project-img {
-  border-radius: 2rem;
-  width: 90%;
-  height: 90%;
-}
 
 .project-title {
   margin: 1rem;
@@ -553,8 +537,8 @@ article .icon {
 }
 .project4-img {
   width: 100%;
-  height: 320px;             /* Explicit height is needed */
-  object-fit: contain;       /* use 'contain' to show full image, or 'cover' to crop */
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   border-radius: 1rem;
   margin-bottom: 1rem;
   transition: transform 0.3s ease;
@@ -592,7 +576,7 @@ article .icon {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 70vh;
+  padding-block: 4rem;
 }
 
 .contact-info-upper-container {
@@ -633,11 +617,6 @@ body {
   color: white;
 }
 
-section {
-  background-color: rgba(18, 18, 18, 0.95);
-  position: relative;
-  z-index: 1;
-}
 
 /* Global text adjustments */
 p,
@@ -705,11 +684,6 @@ body::before {
   z-index: 0;
   pointer-events: none;
 }
-section {
-  background-color: transparent;
-  position: relative;
-  z-index: 1;
-}
 
 
 
@@ -732,19 +706,7 @@ footer p {
   transition: all 0.3s ease-in-out;
 }
 
-.project-img {
-  width: 100%;
-  height: 220px;               /* Increased from 90% or auto */
-  object-fit: cover;
-  border-radius: 1rem;
-  margin-bottom: 1rem;
-  transition: transform 0.3s ease;
-}
 
-
-.project-img:hover {
-  transform: scale(1.05);
-}
 
 .icon {
   transition: transform 0.3s ease;
