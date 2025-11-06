@@ -65,7 +65,8 @@ window.addEventListener("load", () => {
 const sections = document.querySelectorAll("section");
 const body = document.body;
 const bgLayer = document.getElementById('bg-layer');
-let currentBg = null;
+const defaultBg = body.getAttribute('data-default-bg') || 'bg-default.jpg';
+let currentBg = defaultBg;
 
 function crossfadeBackground(bgName) {
   if (!bgName || bgName === currentBg) return;
@@ -88,15 +89,20 @@ function crossfadeBackground(bgName) {
   img.src = url;
 }
 
-window.addEventListener("scroll", () => {
+function updateBackgroundForViewport() {
   sections.forEach((section) => {
     const rect = section.getBoundingClientRect();
     if (rect.top <= window.innerHeight * 0.6 && rect.bottom >= window.innerHeight * 0.4) {
-      const bg = section.getAttribute("data-bg");
-      if (bg) crossfadeBackground(bg);
+      const bg = section.id === 'metrics'
+        ? (section.getAttribute('data-bg') || defaultBg)
+        : defaultBg;
+      crossfadeBackground(bg);
     }
   });
-});
+}
+
+window.addEventListener('scroll', updateBackgroundForViewport);
+window.addEventListener('load', updateBackgroundForViewport);
 
 // Animated counters for metrics section
 (function setupCounters() {
