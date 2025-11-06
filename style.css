@@ -512,6 +512,62 @@ article .icon {
 }
 
 
+/* METRICS SECTION */
+#metrics {
+  margin-block: 6rem;
+}
+
+.metrics-container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.metric-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  padding: 1.25rem 1rem;
+  text-align: center;
+}
+
+.metric-value {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.metric-label {
+  margin-top: 0.25rem;
+  font-weight: 600;
+}
+
+.metric-note {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #cfcfcf;
+}
+
+.metrics-disclaimer {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+  opacity: 0.85;
+}
+
+@media screen and (max-width: 992px) {
+  .metrics-container {
+    grid-template-columns: repeat(2, minmax(160px, 1fr));
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .metrics-container {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* PROJECTS SECTION */
 
 #projects {

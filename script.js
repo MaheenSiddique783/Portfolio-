@@ -81,3 +81,36 @@ window.addEventListener("scroll", () => {
   });
 });
 
+// Animated counters for metrics section
+(function setupCounters() {
+  const counters = document.querySelectorAll('.counter');
+  if (!counters.length) return;
+
+  const ease = (t) => 1 - Math.pow(1 - t, 3); // easeOutCubic
+
+  const animate = (el) => {
+    const target = parseInt(el.getAttribute('data-target'), 10) || 0;
+    const duration = 1200 + Math.min(1800, target / 5000); // scale slightly by size
+    const start = performance.now();
+
+    const step = (now) => {
+      const p = Math.min(1, (now - start) / duration);
+      const val = Math.floor(target * ease(p));
+      el.textContent = val.toLocaleString();
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+
+  const seen = new WeakSet();
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && !seen.has(entry.target)) {
+        seen.add(entry.target);
+        animate(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  counters.forEach((c) => io.observe(c));
+})();
