@@ -64,19 +64,36 @@ window.addEventListener("load", () => {
 // Background transition on scroll
 const sections = document.querySelectorAll("section");
 const body = document.body;
+const bgLayer = document.getElementById('bg-layer');
+let currentBg = null;
+
+function crossfadeBackground(bgName) {
+  if (!bgName || bgName === currentBg) return;
+  const url = `./assets/${bgName}`;
+  const img = new Image();
+  img.onload = () => {
+    bgLayer.style.backgroundImage = `url('${url}')`;
+    // Fade in overlay
+    bgLayer.style.opacity = '1';
+    // After fade, swap base background and fade out overlay
+    setTimeout(() => {
+      body.style.backgroundImage = `url('${url}')`;
+      bgLayer.style.opacity = '0';
+      currentBg = bgName;
+    }, 450);
+  };
+  img.onerror = () => {
+    // silently ignore if asset missing
+  };
+  img.src = url;
+}
 
 window.addEventListener("scroll", () => {
   sections.forEach((section) => {
     const rect = section.getBoundingClientRect();
-    if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+    if (rect.top <= window.innerHeight * 0.6 && rect.bottom >= window.innerHeight * 0.4) {
       const bg = section.getAttribute("data-bg");
-      if (bg) {
-        body.style.backgroundImage = `url('./assets/${bg}')`;
-        body.style.backgroundSize = "cover";
-        body.style.backgroundAttachment = "fixed";
-        body.style.backgroundPosition = "center";
-        body.style.transition = "background-image 0.6s ease-in-out";
-      }
+      if (bg) crossfadeBackground(bg);
     }
   });
 });
