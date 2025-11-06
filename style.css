@@ -636,6 +636,14 @@ article .icon {
   padding: 0;            /* Reset any unwanted padding */
 }
 
+/* Ensure hobby images have consistent size across cards */
+.hobby-containers .project-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;   /* consistent height across the three cards */
+  object-fit: cover;      /* crop to fill without stretching */
+}
+
 
 
 
