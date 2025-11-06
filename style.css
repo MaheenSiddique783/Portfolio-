@@ -195,13 +195,19 @@ section {
   align-items: center;
   flex-wrap: wrap;
 }
+.bouncing-title {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.1em;
+  line-height: 1;
+}
+
 .bouncing-title span {
   font-family: "Poppins", sans-serif;
   position: relative;
   font-size: 2rem;
-  padding-bottom: 25px;
-
-  top: 20px;
+  padding-block: 0.6em; /* reserve space for bounce */
   color: #fff;
   display: inline-block;
   text-shadow: 0 1px 0 #b7b7b7, 0 2px 0 #b7b7b7, 0 3px 0 #b7b7b7,
@@ -209,7 +215,8 @@ section {
                0 7px 0 transparent, 0 8px 0 transparent, 0 9px 0 transparent,
                0 10px 10px rgba(0, 0, 0, 0.5);
   animation: bounceText 1s ease-in-out infinite alternate;
-  animation-iteration-count: 4; 
+  animation-iteration-count: 4;
+  will-change: transform;
 }
 
 /* Stagger each letter */
@@ -234,14 +241,15 @@ section {
 
 
 @keyframes bounceText {
+  0% {
+    transform: translateY(0);
+  }
   100% {
-    top: -20px;
+    transform: translateY(-0.6em);
     text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
                  0 5px 0 #ccc, 0 6px 0 #ccc, 0 7px 0 #ccc, 0 8px 0 #ccc,
                  0 9px 0 #ccc, 0 60px 30px rgba(0, 0, 0, 0.3);
   }
-  
-
 }
 
 
@@ -250,11 +258,14 @@ section {
   margin: auto 0;
   max-width: 360px;
   width: min(100%, 360px);
+  flex: 0 1 360px;
 }
 
 .section__text {
   align-self: center;
   text-align: center;
+  flex: 1 1 320px;
+  min-width: 280px;
 }
 
 .section__text p {
@@ -691,8 +702,8 @@ body::before {
 /* FOOTER SECTION */
 
 footer {
-  height: 26vh;
   margin: 0 1rem;
+  padding: 3rem 0;
 }
 
 footer p {
