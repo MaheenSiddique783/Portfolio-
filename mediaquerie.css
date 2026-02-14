@@ -28,6 +28,12 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  /* Projects grid: single column on smaller screens */
+  #projects .experience-details-container {
+    grid-template-columns: 1fr;
+  }
+
+
   .section__pic-container {
     margin: 0 auto;
   }
@@ -100,6 +106,7 @@ body {
 
 /* Mobile adjustments (≤ 480px) */
 @media screen and (max-width: 480px) {
+
   .section__text__p1,
   .section__text__p2,
   .title {
@@ -155,8 +162,11 @@ body {
 
 /* Toggle desktop vs hamburger nav */
 @media screen and (max-width: 992px) {
-  #desktop-nav { display: none; }
-  #hamburger-nav { 
+  #desktop-nav {
+    display: none;
+  }
+
+  #hamburger-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
